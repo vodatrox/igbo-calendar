@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Background circle -->
+    <path
+        android:fillColor="#D4900A"
+        android:pathData="M54,54m-40,0a40,40 0 1,0 80,0a40,40 0 1,0 -80,0"/>
+    <!-- Calendar icon -->
+    <path
+        android:fillColor="#1A1200"
+        android:pathData="M38,36h32c2.2,0 4,1.8 4,4v32c0,2.2 -1.8,4 -4,4H38c-2.2,0 -4,-1.8 -4,-4V40C34,37.8 35.8,36 38,36z"/>
+    <path
+        android:fillColor="#D4900A"
+        android:pathData="M38,44h32v4H38z"/>
+    <path
+        android:fillColor="#D4900A"
+        android:pathData="M40,50h4v4h-4z M50,50h4v4h-4z M60,50h4v4h-4z M40,58h4v4h-4z M50,58h4v4h-4z M60,58h4v4h-4z"/>
+    <!-- Corner decorations for the date tabs -->
+    <path
+        android:fillColor="#D4900A"
+        android:pathData="M44,33a2,2 0 0,1 2,2v4a2,2 0 0,1 -2,2h-2a2,2 0 0,1 -2,-2v-4a2,2 0 0,1 2,-2z"/>
+    <path
+        android:fillColor="#D4900A"
+        android:pathData="M66,33a2,2 0 0,1 2,2v4a2,2 0 0,1 -2,2h-2a2,2 0 0,1 -2,-2v-4a2,2 0 0,1 2,-2z"/>
+</vector>

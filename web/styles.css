@@ -1,0 +1,428 @@
+:root {
+    --primary: #2D3142;
+    --secondary: #4F5D75;
+    --background: #F8F9FA;
+    --surface: #FFFFFF;
+    --on-primary: #FFFFFF;
+    --on-surface: #2D3142;
+    --border: rgba(0, 0, 0, 0.12);
+    --text-secondary: #6B7280;
+}
+
+.dark-mode {
+    --primary: #E2E8F0;
+    --secondary: #A0AEC0;
+    --background: #121212;
+    --surface: #1E1E1E;
+    --on-surface: #E2E8F0;
+    --border: rgba(255, 255, 255, 0.12);
+    --text-secondary: #94A3B8;
+}
+
+/* Add dark mode by default */
+body {
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    margin: 0;
+    background: var(--background);
+    color: var(--on-surface);
+    transition: background 0.3s, color 0.3s;
+    /* New desktop centering */
+    justify-content: center;
+    min-height: 100vh;
+    align-items: center;
+}
+
+.calendar-container {
+    flex: 1;
+    max-width: 600px;
+    background: var(--surface);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Gregorian Specific Styles */
+.gregorian .weekdays,
+.gregorian .days-grid {
+    grid-template-columns: repeat(7, 1fr);
+}
+
+.gregorian .day {
+    min-height: 80px;
+    padding: 8px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    color: var(--on-surface);
+    cursor: pointer;
+}
+
+.gregorian .day.empty {
+    background: var(--background);
+    border-color: transparent;
+}
+
+.gregorian .weekdays div {
+    padding: 12px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    text-align: center;
+}
+
+/* Igbo Calendar Styles */
+.igbo .weekdays,
+.igbo .days-grid {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.igbo .day {
+    min-height: 100px;
+    padding: 12px;
+    background: var(--week-color, var(--surface));
+    color: var(--week-text, var(--on-surface));
+}
+
+/* Common Styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 24px;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+}
+
+h1 {
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin: 0;
+    color: var(--on-surface);
+}
+
+button {
+    background: none;
+    border: none;
+    padding: 8px;
+    border-radius: 50%;
+    cursor: pointer;
+    color: var(--on-surface);
+    transition: background 0.2s;
+}
+
+button:hover {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.dark-mode button:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.weekdays, .days-grid {
+    display: grid;
+    gap: 2px;
+    padding: 16px;
+}
+
+.highlight {
+    box-shadow: 0 0 0 2px var(--secondary);
+    z-index: 1;
+}
+
+.uboshi-omumu {
+    display: none;
+    padding: 40px;
+    min-height: 400px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    animation: fadeIn 0.4s ease-out;
+}
+
+.uboshi-omumu.active {
+    display: flex;
+    background: var(--surface);
+}
+
+.omumu-day {
+    font-size: 4rem;
+    font-weight: 300;
+    color: var(--secondary);
+    margin-bottom: 1rem;
+}
+
+.omumu-text {
+    font-size: 1.75rem;
+    font-weight: 400;
+    color: var(--on-surface);
+    opacity: 0.9;
+}
+
+#toggleDarkMode {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: var(--surface);
+    color: var(--on-surface);
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--border);
+}
+
+/* Date Picker Styles */
+.date-picker {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+select {
+    padding: 8px 12px;
+    border-radius: 4px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    color: var(--on-surface);
+    font-size: 1rem;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20fill%3D%22%236B7280%22%20d%3D%22M7%2010l5%205%205-5z%22%2F%3E%3C%2Fsvg%3E");
+    background-repeat: no-repeat;
+    background-position: right 8px center;
+    background-size: 16px;
+    padding-right: 32px;
+}
+
+.dark-mode select {
+    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20fill%3D%22%2394A3B8%22%20d%3D%22M7%2010l5%205%205-5z%22%2F%3E%3C%2Fsvg%3E");
+}
+
+select:hover {
+    border-color: var(--secondary);
+}
+
+select:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--secondary);
+}
+
+/* Adjust header layout */
+.gregorian header {
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Add responsive media queries */
+@media (max-width: 1200px) {
+    body {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .calendar-container {
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 12px;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .date-picker {
+        width: 100%;
+        justify-content: center;
+    }
+
+    select {
+        padding: 6px 10px;
+        font-size: 0.9rem;
+        background-position: right 6px center;
+    }
+
+    /* Adjust calendar grids */
+    .gregorian .day {
+        min-height: 60px;
+        font-size: 0.9rem;
+    }
+
+    .igbo .day {
+        min-height: 80px;
+        padding: 8px;
+        font-size: 0.85rem;
+    }
+
+    .omumu-day {
+        font-size: 2.5rem;
+    }
+
+    .omumu-text {
+        font-size: 1.25rem;
+    }
+
+    #toggleDarkMode {
+        top: 10px;
+        right: 10px;
+        width: 40px;
+        height: 40px;
+        font-size: 0.9rem;
+    }
+
+    .weekdays div {
+        font-size: 0.8rem;
+        padding: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 8px;
+        gap: 10px;
+    }
+
+    .calendar-container {
+        border-radius: 8px;
+    }
+
+    .gregorian .day {
+        min-height: 50px;
+        font-size: 0.8rem;
+    }
+
+    .igbo .day {
+        min-height: 70px;
+        padding: 6px;
+    }
+
+    .date-picker button {
+        padding: 4px;
+    }
+
+    .uboshi-omumu {
+        padding: 20px;
+        min-height: 300px;
+    }
+
+    .omumu-day {
+        font-size: 2rem;
+    }
+
+    .omumu-text {
+        font-size: 1rem;
+    }
+
+    h1 {
+        font-size: 1.1rem;
+    }
+
+    #toggleDarkMode {
+        width: 36px;
+        height: 36px;
+        font-size: 0.8rem;
+    }
+
+    .igbo .days-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+}
+
+/* Add touch-friendly sizes */
+button {
+    min-width: 44px;
+    min-height: 44px;
+}
+
+/* Prevent text overflow */
+.day {
+    word-break: break-word;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Improve grid responsiveness */
+.days-grid {
+    grid-template-columns: repeat(auto-fit, minmax(40px, 1fr));
+}
+
+/* Orientation-specific adjustments */
+@media screen and (max-width: 768px) and (orientation: portrait) {
+    .calendar-container {
+        width: 100vw;
+        margin-left: -8px;
+        border-radius: 0;
+    }
+}
+
+/* Updated desktop-specific styles */
+@media (min-width: 768px) {
+    .calendar-container {
+        max-width: 400px;
+        transform: scale(0.9);
+        transition: transform 0.3s, box-shadow 0.3s;
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+    }
+
+    .calendar-container:hover {
+        transform: scale(0.92);
+        box-shadow: 0 16px 32px rgba(0, 0, 0, 0.3);
+    }
+
+    body {
+        padding: 40px;
+        gap: 40px;
+        background: #0a0a0a;
+    }
+}
+/* Add dark mode by default */
+body.dark-mode {
+    --primary: #E2E8F0;
+    --secondary: #A0AEC0;
+    --background: #121212;
+    --surface: #1E1E1E;
+    --on-surface: #E2E8F0;
+    --border: rgba(255, 255, 255, 0.12);
+    --text-secondary: #94A3B8;
+}
+
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 1rem;
+    text-align: center;
+    background: var(--surface);
+    border-top: 1px solid var(--border);
+    color: var(--on-surface);
+}
+
+.footer a {
+    color: var(--secondary);
+    text-decoration: none;
+    transition: opacity 0.3s;
+}
+
+.footer a:hover {
+    opacity: 0.8;
+    text-decoration: underline;
+}

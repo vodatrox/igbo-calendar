@@ -1,0 +1,432 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AA0000000000000000000021 /* IgboCalendarApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000020 /* IgboCalendarApp.swift */; };
+		AA0000000000000000000023 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000022 /* ContentView.swift */; };
+		AA0000000000000000000025 /* IgboCalendarEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000024 /* IgboCalendarEngine.swift */; };
+		AA0000000000000000000027 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000026 /* Models.swift */; };
+		AA0000000000000000000029 /* MarketDayData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000028 /* MarketDayData.swift */; };
+		AA000000000000000000002B /* IzuData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000000000000000000002A /* IzuData.swift */; };
+		AA000000000000000000002D /* FestivalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000000000000000000002C /* FestivalData.swift */; };
+		AA000000000000000000002F /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000000000000000000002E /* CalendarViewModel.swift */; };
+		AA0000000000000000000031 /* IgboColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000030 /* IgboColors.swift */; };
+		AA0000000000000000000033 /* CalendarScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000032 /* CalendarScreen.swift */; };
+		AA0000000000000000000035 /* MarketScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000034 /* MarketScreen.swift */; };
+		AA0000000000000000000037 /* InfoScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000036 /* InfoScreen.swift */; };
+		AA0000000000000000000039 /* EventsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000038 /* EventsScreen.swift */; };
+		AA000000000000000000003B /* GregorianCalendarGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000000000000000000003A /* GregorianCalendarGrid.swift */; };
+		AA000000000000000000003D /* IgboMonthGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000000000000000000003C /* IgboMonthGrid.swift */; };
+		AA000000000000000000003F /* IgboDateCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000000000000000000003E /* IgboDateCard.swift */; };
+		AA0000000000000000000041 /* DateSearchSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000040 /* DateSearchSheet.swift */; };
+		AA0000000000000000000043 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000042 /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		AA0000000000000000000003 /* IgboCalendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IgboCalendar.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA0000000000000000000020 /* IgboCalendarApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IgboCalendarApp.swift; sourceTree = "<group>"; };
+		AA0000000000000000000022 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		AA0000000000000000000024 /* IgboCalendarEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IgboCalendarEngine.swift; sourceTree = "<group>"; };
+		AA0000000000000000000026 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		AA0000000000000000000028 /* MarketDayData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketDayData.swift; sourceTree = "<group>"; };
+		AA000000000000000000002A /* IzuData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IzuData.swift; sourceTree = "<group>"; };
+		AA000000000000000000002C /* FestivalData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FestivalData.swift; sourceTree = "<group>"; };
+		AA000000000000000000002E /* CalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewModel.swift; sourceTree = "<group>"; };
+		AA0000000000000000000030 /* IgboColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IgboColors.swift; sourceTree = "<group>"; };
+		AA0000000000000000000032 /* CalendarScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarScreen.swift; sourceTree = "<group>"; };
+		AA0000000000000000000034 /* MarketScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketScreen.swift; sourceTree = "<group>"; };
+		AA0000000000000000000036 /* InfoScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoScreen.swift; sourceTree = "<group>"; };
+		AA0000000000000000000038 /* EventsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsScreen.swift; sourceTree = "<group>"; };
+		AA000000000000000000003A /* GregorianCalendarGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GregorianCalendarGrid.swift; sourceTree = "<group>"; };
+		AA000000000000000000003C /* IgboMonthGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IgboMonthGrid.swift; sourceTree = "<group>"; };
+		AA000000000000000000003E /* IgboDateCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IgboDateCard.swift; sourceTree = "<group>"; };
+		AA0000000000000000000040 /* DateSearchSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateSearchSheet.swift; sourceTree = "<group>"; };
+		AA0000000000000000000042 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AA0000000000000000000005 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AA000000000000000000000D /* IgboCalendar */ = {
+			isa = PBXGroup;
+			children = (
+				AA000000000000000000000F /* App */,
+				AA0000000000000000000010 /* Data */,
+				AA0000000000000000000011 /* ViewModel */,
+				AA0000000000000000000012 /* Theme */,
+				AA0000000000000000000013 /* Screens */,
+				AA0000000000000000000014 /* Components */,
+				AA0000000000000000000042 /* Assets.xcassets */,
+				AA000000000000000000000E /* Products */,
+			);
+			path = IgboCalendar;
+			sourceTree = "<group>";
+		};
+		AA000000000000000000000E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AA0000000000000000000003 /* IgboCalendar.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AA000000000000000000000F /* App */ = {
+			isa = PBXGroup;
+			children = (
+				AA0000000000000000000020 /* IgboCalendarApp.swift */,
+				AA0000000000000000000022 /* ContentView.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		AA0000000000000000000010 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				AA0000000000000000000024 /* IgboCalendarEngine.swift */,
+				AA0000000000000000000026 /* Models.swift */,
+				AA0000000000000000000028 /* MarketDayData.swift */,
+				AA000000000000000000002A /* IzuData.swift */,
+				AA000000000000000000002C /* FestivalData.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		AA0000000000000000000011 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				AA000000000000000000002E /* CalendarViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		AA0000000000000000000012 /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				AA0000000000000000000030 /* IgboColors.swift */,
+			);
+			path = Theme;
+			sourceTree = "<group>";
+		};
+		AA0000000000000000000013 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				AA0000000000000000000032 /* CalendarScreen.swift */,
+				AA0000000000000000000034 /* MarketScreen.swift */,
+				AA0000000000000000000036 /* InfoScreen.swift */,
+				AA0000000000000000000038 /* EventsScreen.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		AA0000000000000000000014 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				AA000000000000000000003A /* GregorianCalendarGrid.swift */,
+				AA000000000000000000003C /* IgboMonthGrid.swift */,
+				AA000000000000000000003E /* IgboDateCard.swift */,
+				AA0000000000000000000040 /* DateSearchSheet.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AA0000000000000000000002 /* IgboCalendar */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AA0000000000000000000008 /* Build configuration list for PBXNativeTarget "IgboCalendar" */;
+			buildPhases = (
+				AA0000000000000000000004 /* Sources */,
+				AA0000000000000000000005 /* Frameworks */,
+				AA0000000000000000000006 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = IgboCalendar;
+			productName = IgboCalendar;
+			productReference = AA0000000000000000000003 /* IgboCalendar.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AA0000000000000000000001 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 2620;
+				TargetAttributes = {
+					AA0000000000000000000002 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+				};
+			};
+			buildConfigurationList = AA0000000000000000000007 /* Build configuration list for PBXProject "IgboCalendar" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AA000000000000000000000D /* IgboCalendar */;
+			productRefGroup = AA000000000000000000000E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AA0000000000000000000002 /* IgboCalendar */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AA0000000000000000000006 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA0000000000000000000043 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AA0000000000000000000004 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA0000000000000000000021 /* IgboCalendarApp.swift in Sources */,
+				AA0000000000000000000023 /* ContentView.swift in Sources */,
+				AA0000000000000000000025 /* IgboCalendarEngine.swift in Sources */,
+				AA0000000000000000000027 /* Models.swift in Sources */,
+				AA0000000000000000000029 /* MarketDayData.swift in Sources */,
+				AA000000000000000000002B /* IzuData.swift in Sources */,
+				AA000000000000000000002D /* FestivalData.swift in Sources */,
+				AA000000000000000000002F /* CalendarViewModel.swift in Sources */,
+				AA0000000000000000000031 /* IgboColors.swift in Sources */,
+				AA0000000000000000000033 /* CalendarScreen.swift in Sources */,
+				AA0000000000000000000035 /* MarketScreen.swift in Sources */,
+				AA0000000000000000000037 /* InfoScreen.swift in Sources */,
+				AA0000000000000000000039 /* EventsScreen.swift in Sources */,
+				AA000000000000000000003B /* GregorianCalendarGrid.swift in Sources */,
+				AA000000000000000000003D /* IgboMonthGrid.swift in Sources */,
+				AA000000000000000000003F /* IgboDateCard.swift in Sources */,
+				AA0000000000000000000041 /* DateSearchSheet.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		AA0000000000000000000009 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = X2H6NFB9AA;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		AA000000000000000000000A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = X2H6NFB9AA;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AA000000000000000000000B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Igbo Calendar";
+				INFOPLIST_KEY_LSApplicationCategoryType = Utilities;
+				INFOPLIST_KEY_NSCalendarsUsageDescription = "Used to display calendar dates";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.igbocalendar.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		AA000000000000000000000C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Igbo Calendar";
+				INFOPLIST_KEY_LSApplicationCategoryType = Utilities;
+				INFOPLIST_KEY_NSCalendarsUsageDescription = "Used to display calendar dates";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.igbocalendar.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AA0000000000000000000007 /* Build configuration list for PBXProject "IgboCalendar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA0000000000000000000009 /* Debug */,
+				AA000000000000000000000A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AA0000000000000000000008 /* Build configuration list for PBXNativeTarget "IgboCalendar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA000000000000000000000B /* Debug */,
+				AA000000000000000000000C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AA0000000000000000000001 /* Project object */;
+}

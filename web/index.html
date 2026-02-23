@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon.png">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="shortcut icon" href="favicon.ico">
+
+    <title>Igbo Calendar</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="dark-mode">
+<!-- Keep the same HTML structure as previous version -->
+<!-- Gregorian Calendar -->
+<div class="calendar-container gregorian">
+    <header>
+        <div class="date-picker">
+            <button id="gregorianPrevMonth">◀️</button>
+            <select id="gregorianMonth"></select>
+            <select id="gregorianYear"></select>
+            <button id="gregorianNextMonth">▶️</button>
+        </div>
+    </header>
+    <div class="weekdays gregorian">
+        <div>Sun</div><div>Mon</div><div>Tue</div><div>Wed</div><div>Thu</div><div>Fri</div><div>Sat</div>
+    </div>
+    <div class="days-grid gregorian" id="gregorianDays"></div>
+</div>
+
+<!-- Igbo Calendar -->
+<div class="calendar-container igbo">
+    <header>
+        <button id="igboPrevMonth">◀️</button>
+        <h1 id="igboMonthYear"></h1>
+        <button id="igboNextMonth">▶️</button>
+    </header>
+
+    <div class="uboshi-omumu" id="uboshiOmumu">
+        <div class="omumu-day" id="omumuDay"></div>
+        <div class="omumu-text">Ubọchị Ọmụmụ</div>
+    </div>
+
+    <div class="calendar-content" id="igboCalendarContent">
+        <div class="weekdays igbo">
+<!--            <div>EKE</div><div>ORIE</div><div>AFỌ</div><div>NKWỌ</div>-->
+        </div>
+        <div class="days-grid igbo" id="igboDays"></div>
+    </div>
+</div>
+<footer class="footer">
+    Made with ❤️ by <a href="https://vodatrox.com.ng" target="_blank">Vodatrox Limited</a>
+</footer>
+<button id="toggleDarkMode">🌙</button>
+<script src="script.js"></script>
+</body>
+</html>
