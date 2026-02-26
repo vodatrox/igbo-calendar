@@ -1,60 +1,380 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="amber">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#0C0800">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="favicon.png">
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="shortcut icon" href="favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon.png">
+  <link rel="shortcut icon" href="favicon.ico">
 
-    <title>Igbo Calendar</title>
-    <link rel="stylesheet" href="styles.css">
+  <title>Igbo Calendar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
-<body class="dark-mode">
-<!-- Keep the same HTML structure as previous version -->
-<!-- Gregorian Calendar -->
-<div class="calendar-container gregorian">
-    <header>
-        <div class="date-picker">
-            <button id="gregorianPrevMonth">◀️</button>
-            <select id="gregorianMonth"></select>
-            <select id="gregorianYear"></select>
-            <button id="gregorianNextMonth">▶️</button>
+<body>
+<div id="app">
+
+  <!-- ══ APP HEADER ══════════════════════════════════════════════════════════ -->
+  <header class="app-header">
+    <div class="header-brand">
+      <svg class="header-brand-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="3" y="4" width="18" height="17" rx="3" stroke="currentColor" stroke-width="1.8"/>
+        <path d="M3 9h18" stroke="currentColor" stroke-width="1.8"/>
+        <path d="M8 2v4M16 2v4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+        <circle cx="8" cy="14" r="1" fill="currentColor"/>
+        <circle cx="12" cy="14" r="1" fill="currentColor"/>
+        <circle cx="16" cy="14" r="1" fill="currentColor"/>
+      </svg>
+      <span class="header-title">Igbo Calendar</span>
+    </div>
+    <div class="header-actions">
+      <button class="icon-btn" id="searchBtn" title="Search date" aria-label="Search date">
+        <svg viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/><path d="m16.5 16.5 4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+      <button class="icon-btn" id="todayBtn" title="Go to today" aria-label="Go to today">
+        <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="17" rx="3" stroke="currentColor" stroke-width="2"/><path d="M3 9h18" stroke="currentColor" stroke-width="2"/><path d="M8 2v4M16 2v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="15" r="2" fill="currentColor"/></svg>
+      </button>
+      <button class="icon-btn" id="themeBtn" title="Toggle theme" aria-label="Toggle theme">
+        <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M12 3v18" stroke="currentColor" stroke-width="2"/><path d="M12 3a9 9 0 0 1 0 18" fill="currentColor" opacity=".4"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- ══ SCREENS ═════════════════════════════════════════════════════════════ -->
+  <main class="screens">
+
+    <!-- ── CALENDAR SCREEN ─────────────────────────────────────────────────── -->
+    <div class="screen active" id="screen-calendar">
+
+      <!-- View Toggle -->
+      <div class="view-toggle-bar">
+        <button class="view-toggle-btn active" data-view="gregorian">Gregorian</button>
+        <button class="view-toggle-btn" data-view="igbo">Igbo Era</button>
+      </div>
+
+      <!-- Gregorian Panel -->
+      <div class="cal-panel" id="gregorian-panel">
+        <div class="month-nav">
+          <button class="nav-arrow" id="greg-prev" aria-label="Previous month">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="month-label" id="greg-month-label">January 2024</div>
+          <button class="nav-arrow" id="greg-next" aria-label="Next month">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
         </div>
-    </header>
-    <div class="weekdays gregorian">
-        <div>Sun</div><div>Mon</div><div>Tue</div><div>Wed</div><div>Thu</div><div>Fri</div><div>Sat</div>
-    </div>
-    <div class="days-grid gregorian" id="gregorianDays"></div>
-</div>
-
-<!-- Igbo Calendar -->
-<div class="calendar-container igbo">
-    <header>
-        <button id="igboPrevMonth">◀️</button>
-        <h1 id="igboMonthYear"></h1>
-        <button id="igboNextMonth">▶️</button>
-    </header>
-
-    <div class="uboshi-omumu" id="uboshiOmumu">
-        <div class="omumu-day" id="omumuDay"></div>
-        <div class="omumu-text">Ubọchị Ọmụmụ</div>
-    </div>
-
-    <div class="calendar-content" id="igboCalendarContent">
-        <div class="weekdays igbo">
-<!--            <div>EKE</div><div>ORIE</div><div>AFỌ</div><div>NKWỌ</div>-->
+        <div class="weekday-row">
+          <div>Su</div><div>Mo</div><div>Tu</div>
+          <div>We</div><div>Th</div><div>Fr</div><div>Sa</div>
         </div>
-        <div class="days-grid igbo" id="igboDays"></div>
+        <div class="greg-grid" id="greg-grid"></div>
+      </div>
+
+      <!-- Igbo Era Panel -->
+      <div class="cal-panel hidden" id="igbo-panel">
+        <div class="month-nav">
+          <button class="nav-arrow" id="igbo-prev" aria-label="Previous Igbo month">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="month-label" id="igbo-month-label">Ọnwa Mbụ 7024</div>
+          <button class="nav-arrow" id="igbo-next" aria-label="Next Igbo month">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+
+        <!-- Ubọchị Ọmụmụ special display -->
+        <div class="uboshi-display hidden" id="uboshi-display">
+          <div class="uboshi-inner">
+            <div class="uboshi-emoji">🌟</div>
+            <div class="uboshi-title">Ubọchị Ọmụmụ</div>
+            <div class="uboshi-day-name" id="uboshi-day-name">AFỌ</div>
+            <div class="uboshi-subtitle">New Year Day · Igbo Calendar</div>
+            <p class="uboshi-desc">The sacred intercalary day that completes the Igbo year. A time of deep reflection, gratitude, and renewal as one Aro ends and the next begins.</p>
+          </div>
+        </div>
+
+        <!-- Igbo month grid -->
+        <div id="igbo-grid-wrap">
+          <div class="igbo-col-headers">
+            <div class="izu-spacer"></div>
+            <div class="igbo-day-hdr" style="--day-color: var(--eke)">EKE</div>
+            <div class="igbo-day-hdr" style="--day-color: var(--orie)">ORIE</div>
+            <div class="igbo-day-hdr" style="--day-color: var(--afo)">AFỌ</div>
+            <div class="igbo-day-hdr" style="--day-color: var(--nkwo)">NKWỌ</div>
+          </div>
+          <div class="igbo-grid" id="igbo-grid"></div>
+        </div>
+      </div>
+
+      <!-- Igbo Date Card -->
+      <div class="igbo-date-card card" id="igbo-date-card">
+        <div class="idc-greg-row">
+          <span class="idc-greg-date" id="idc-greg-date">Monday, 24 Feb 2026</span>
+          <span class="idc-dot" id="idc-dot"></span>
+        </div>
+        <div class="idc-market-name" id="idc-market-name">AFỌ</div>
+        <div class="idc-chips">
+          <div class="idc-chip">
+            <span class="chip-label">IZU</span>
+            <span class="chip-value" id="chip-izu">Izu Mbụ</span>
+          </div>
+          <div class="idc-chip">
+            <span class="chip-label">ỌNWA</span>
+            <span class="chip-value" id="chip-onwa">Ọnwa Mbụ</span>
+          </div>
+          <div class="idc-chip">
+            <span class="chip-label">ARO</span>
+            <span class="chip-value" id="chip-aro">7026</span>
+          </div>
+        </div>
+        <div class="idc-progress-wrap" id="idc-progress-wrap">
+          <div class="idc-progress-label">
+            <span id="prog-day-label">Day 1 of 28</span>
+            <span id="prog-pct-label">0%</span>
+          </div>
+          <div class="idc-progress-bar">
+            <div class="idc-progress-fill" id="idc-progress-fill"></div>
+          </div>
+        </div>
+        <!-- Ubọchị Ọmụmụ mode for card -->
+        <div class="idc-uboshi hidden" id="idc-uboshi">
+          <div class="idc-uboshi-text">Ubọchị Ọmụmụ · New Year Day</div>
+        </div>
+      </div>
+
+      <!-- Izu Info Banner -->
+      <div class="izu-banner card hidden" id="izu-banner">
+        <div class="izu-banner-icon" id="izu-banner-icon">🕊️</div>
+        <div class="izu-banner-body">
+          <div class="izu-banner-name" id="izu-banner-name">Izu Mbụ</div>
+          <div class="izu-banner-tagline" id="izu-banner-tagline">Ritual Cleansing & Preparation</div>
+        </div>
+      </div>
+
+      <!-- Legend Bar -->
+      <div class="legend-bar">
+        <div class="legend-item"><span class="legend-dot" style="background:var(--eke)"></span><span>EKE</span></div>
+        <div class="legend-item"><span class="legend-dot" style="background:var(--orie)"></span><span>ORIE</span></div>
+        <div class="legend-item"><span class="legend-dot" style="background:var(--afo)"></span><span>AFỌ</span></div>
+        <div class="legend-item"><span class="legend-dot" style="background:var(--nkwo)"></span><span>NKWỌ</span></div>
+      </div>
+
+      <div class="screen-footer">Made with ❤️ by <a href="https://vodatrox.com.ng" target="_blank" rel="noopener">Vodatrox Limited</a></div>
     </div>
-</div>
-<footer class="footer">
-    Made with ❤️ by <a href="https://vodatrox.com.ng" target="_blank">Vodatrox Limited</a>
-</footer>
-<button id="toggleDarkMode">🌙</button>
+
+    <!-- ── MARKET SCREEN ────────────────────────────────────────────────────── -->
+    <div class="screen hidden" id="screen-market">
+      <div class="screen-hero">
+        <div class="hero-title">Market Days</div>
+        <div class="hero-sub">The four sacred days of the Izu cycle</div>
+      </div>
+
+      <!-- Today's market day highlight -->
+      <div class="today-market-card card" id="today-market-card">
+        <div class="tmc-today-label">TODAY</div>
+        <div class="tmc-icon" id="tmc-icon">🌅</div>
+        <div class="tmc-day-name" id="tmc-day-name">EKE</div>
+        <div class="tmc-tagline" id="tmc-tagline">Day of Creation & Earth</div>
+        <div class="tmc-direction">
+          <span class="direction-badge" id="tmc-direction">East</span>
+          <span class="deity-badge" id="tmc-deity">Eke (Earth Deity)</span>
+        </div>
+      </div>
+
+      <!-- All market day cards -->
+      <div class="section-title">All Market Days</div>
+      <div id="market-day-list"></div>
+
+      <!-- Cosmic cycle info -->
+      <div class="card cosmic-card">
+        <div class="cosmic-title">⚡ The Cosmic Cycle</div>
+        <p class="cosmic-text">The four-day Igbo week mirrors the four cardinal directions and four primordial forces. Every EKE, ORIE, AFỌ, and NKWỌ day carries its own spiritual energy — together they form a complete cosmic cycle that has governed Igbo life for millennia.</p>
+        <div class="cosmic-facts">
+          <div class="cosmic-fact"><span class="fact-num">4</span><span class="fact-label">Sacred Days</span></div>
+          <div class="cosmic-fact"><span class="fact-num">7</span><span class="fact-label">Weeks per Month</span></div>
+          <div class="cosmic-fact"><span class="fact-num">13</span><span class="fact-label">Months per Year</span></div>
+        </div>
+      </div>
+
+      <div class="screen-footer">Made with ❤️ by <a href="https://vodatrox.com.ng" target="_blank" rel="noopener">Vodatrox Limited</a></div>
+    </div>
+
+    <!-- ── INFO SCREEN ──────────────────────────────────────────────────────── -->
+    <div class="screen hidden" id="screen-info">
+      <div class="screen-hero">
+        <div class="hero-title">Igbo Calendar</div>
+        <div class="hero-sub">Weeks &amp; months of the Aro cycle</div>
+      </div>
+
+      <!-- Overview card -->
+      <div class="card overview-card">
+        <div class="overview-title">About the Aro (Year)</div>
+        <p class="overview-text">The Igbo year (Aro) consists of 13 months (Ọnwa) of 28 days each, plus one sacred intercalary day — Ubọchị Ọmụmụ. Each month contains 7 weeks (Izu) of 4 days each, cycling through EKE, ORIE, AFỌ, and NKWỌ. The Igbo Era adds 5,000 years to the Gregorian year.</p>
+        <div class="overview-facts">
+          <div class="ovfact"><span class="ovfact-n">365</span><span class="ovfact-l">Days/Year</span></div>
+          <div class="ovfact"><span class="ovfact-n">13</span><span class="ovfact-l">Months</span></div>
+          <div class="ovfact"><span class="ovfact-n">7</span><span class="ovfact-l">Weeks/Month</span></div>
+          <div class="ovfact"><span class="ovfact-n">+5000</span><span class="ovfact-l">Era Offset</span></div>
+        </div>
+      </div>
+
+      <!-- Info sub-tabs -->
+      <div class="info-tabs">
+        <button class="info-tab active" data-itab="izu">Izu (Weeks)</button>
+        <button class="info-tab" data-itab="onwa">Ọnwa (Months)</button>
+      </div>
+
+      <div id="izu-list"></div>
+      <div id="onwa-list" class="hidden"></div>
+
+      <div class="screen-footer">Made with ❤️ by <a href="https://vodatrox.com.ng" target="_blank" rel="noopener">Vodatrox Limited</a></div>
+    </div>
+
+    <!-- ── EVENTS SCREEN ────────────────────────────────────────────────────── -->
+    <div class="screen hidden" id="screen-events">
+      <div class="screen-hero">
+        <div class="hero-title">Festivals &amp; Events</div>
+        <div class="hero-sub">Celebrating Igbo cultural heritage</div>
+      </div>
+
+      <div id="featured-festival"></div>
+
+      <div class="section-title">All Festivals</div>
+      <div id="festival-list"></div>
+
+      <div class="card cultural-note">
+        <div class="cn-title">📜 Cultural Note</div>
+        <p class="cn-text">Festival dates in the Igbo calendar are tied to specific Igbo months and market days, not fixed Gregorian dates. Actual celebrations may vary by community and region. These traditions have been practiced for thousands of years across Igboland.</p>
+      </div>
+
+      <div class="screen-footer">Made with ❤️ by <a href="https://vodatrox.com.ng" target="_blank" rel="noopener">Vodatrox Limited</a></div>
+    </div>
+
+  </main>
+
+  <!-- ══ BOTTOM NAV ═══════════════════════════════════════════════════════════ -->
+  <nav class="bottom-nav">
+    <button class="bnav-item active" data-screen="calendar" aria-label="Calendar">
+      <svg class="bnav-icon" viewBox="0 0 24 24" fill="none">
+        <rect x="3" y="4" width="18" height="17" rx="3" stroke="currentColor" stroke-width="1.8"/>
+        <path d="M3 9h18" stroke="currentColor" stroke-width="1.8"/>
+        <path d="M8 2v4M16 2v4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+        <rect x="7" y="13" width="4" height="4" rx="1" fill="currentColor" opacity=".5"/>
+      </svg>
+      <span class="bnav-label">Calendar</span>
+    </button>
+    <button class="bnav-item" data-screen="market" aria-label="Market">
+      <svg class="bnav-icon" viewBox="0 0 24 24" fill="none">
+        <path d="M3 9l1-5h16l1 5" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+        <path d="M3 9a3 3 0 0 0 6 0m0 0a3 3 0 0 0 6 0m0 0a3 3 0 0 0 6 0" stroke="currentColor" stroke-width="1.8"/>
+        <path d="M5 14h14v6H5z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+        <path d="M9 20v-4h6v4" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+      </svg>
+      <span class="bnav-label">Market</span>
+    </button>
+    <button class="bnav-item" data-screen="info" aria-label="Info">
+      <svg class="bnav-icon" viewBox="0 0 24 24" fill="none">
+        <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/>
+        <path d="M12 16v-5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="12" cy="8" r="1" fill="currentColor"/>
+      </svg>
+      <span class="bnav-label">Info</span>
+    </button>
+    <button class="bnav-item" data-screen="events" aria-label="Events">
+      <svg class="bnav-icon" viewBox="0 0 24 24" fill="none">
+        <path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+      </svg>
+      <span class="bnav-label">Events</span>
+    </button>
+  </nav>
+
+  <!-- ══ SEARCH BOTTOM SHEET ══════════════════════════════════════════════════ -->
+  <div class="sheet-overlay hidden" id="sheet-overlay"></div>
+  <div class="bottom-sheet hidden" id="search-sheet">
+    <div class="sheet-drag-handle"></div>
+    <div class="sheet-header">
+      <h3 class="sheet-title">Go to Date</h3>
+      <button class="icon-btn sheet-close" id="sheet-close" aria-label="Close">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+
+    <div class="sheet-tabs">
+      <button class="sheet-tab active" data-stab="gregorian">Gregorian</button>
+      <button class="sheet-tab" data-stab="igbo">Igbo Era</button>
+    </div>
+
+    <!-- Gregorian Date Search -->
+    <div class="sheet-pane" id="sheet-greg">
+      <div class="form-group">
+        <label class="form-label">Month</label>
+        <select class="form-select" id="s-greg-month">
+          <option value="0">January</option><option value="1">February</option>
+          <option value="2">March</option><option value="3">April</option>
+          <option value="4">May</option><option value="5">June</option>
+          <option value="6">July</option><option value="7">August</option>
+          <option value="8">September</option><option value="9">October</option>
+          <option value="10">November</option><option value="11">December</option>
+        </select>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">Day</label>
+          <input class="form-input" type="number" id="s-greg-day" min="1" max="31" placeholder="1–31">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Year</label>
+          <input class="form-input" type="number" id="s-greg-year" min="1900" max="2100" placeholder="e.g. 2026">
+        </div>
+      </div>
+      <div class="form-error hidden" id="s-greg-error">Invalid date. Please check the values.</div>
+      <button class="primary-btn" id="s-greg-go">Go to Date</button>
+    </div>
+
+    <!-- Igbo Era Date Search -->
+    <div class="sheet-pane hidden" id="sheet-igbo">
+      <div class="form-group">
+        <label class="form-label">Month (Ọnwa)</label>
+        <select class="form-select" id="s-igbo-month">
+          <option value="0">Ọnwa Mbụ</option>
+          <option value="1">Ọnwa Abụọ</option>
+          <option value="2">Ọnwa Ife Eke</option>
+          <option value="3">Ọnwa Anọ</option>
+          <option value="4">Ọnwa Agwụ</option>
+          <option value="5">Ọnwa Ifejiọkụ</option>
+          <option value="6">Ọnwa Alọm Chi</option>
+          <option value="7">Ọnwa Ilọ Mmụọ</option>
+          <option value="8">Ọnwa Ana</option>
+          <option value="9">Ọnwa Okike</option>
+          <option value="10">Ọnwa Ajana</option>
+          <option value="11">Ọnwa Ede Ajana</option>
+          <option value="12">Ọnwa Ụzọ Alụsị</option>
+        </select>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">Day (1–28)</label>
+          <input class="form-input" type="number" id="s-igbo-day" min="1" max="28" placeholder="1–28">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Igbo Year (Aro)</label>
+          <input class="form-input" type="number" id="s-igbo-year" placeholder="e.g. 7026">
+        </div>
+      </div>
+      <div class="form-hint" id="s-igbo-hint">Igbo year = Gregorian year + 5000</div>
+      <div class="form-error hidden" id="s-igbo-error">Invalid Igbo date. Please check the values.</div>
+      <button class="primary-btn" id="s-igbo-go">Go to Date</button>
+    </div>
+  </div>
+
+</div><!-- #app -->
+
 <script src="script.js"></script>
 </body>
 </html>
