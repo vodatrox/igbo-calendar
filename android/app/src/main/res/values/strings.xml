@@ -1,4 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Igbo Calendar</string>
+    <string name="app_description">A traditional Igbo calendar and cultural reference app</string>
+    <string name="app_author">Vodatrox Ltd</string>
+    <string name="app_version_label">Version</string>
+
+    <!-- Tab labels -->
+    <string name="tab_calendar">Calendar</string>
+    <string name="tab_market">Market Days</string>
+    <string name="tab_info">Info</string>
+    <string name="tab_events">Events</string>
+
+    <!-- Accessibility -->
+    <string name="cd_theme_toggle">Toggle theme</string>
+    <string name="cd_previous_month">Previous month</string>
+    <string name="cd_next_month">Next month</string>
+    <string name="cd_search_date">Search date</string>
 </resources>
