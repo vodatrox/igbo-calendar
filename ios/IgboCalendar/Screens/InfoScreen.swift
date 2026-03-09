@@ -77,7 +77,7 @@ private struct WeeksContent: View {
             InfoOverviewCard(
                 emoji:   "📅",
                 title:   "Izu — The Igbo Week",
-                content: "The Igbo month (Ọnwa) is divided into 7 weeks (Izu), each consisting of 4 market days: Eke, Orie, Afọ, and Nkwọ. Each Izu carries its own spiritual energy, traditional purpose, and communal significance."
+                content: "The Igbo month (Ọnwa) is divided into 7 weeks (Izu), each of exactly 4 days — one complete rotation of the four market days: Eke → Orie → Afọ → Nkwọ. Seven Izu (7 × 4 = 28 days) make one Ọnwa. The weeks are simply numbered; their character is shaped by where they fall in the month's agricultural and ritual cycle, not by any unique festival or deity of their own."
             )
             .padding(.horizontal, 16)
             .padding(.top, 12)
@@ -91,7 +91,7 @@ private struct WeeksContent: View {
             }
 
             DidYouKnowCard(
-                text: "In many Igbo communities, Izu Asaa is a sacred time when elders convene to consult divination and determine the planting calendar for the upcoming year based on cosmic signs."
+                text: "The 7-week Izu cycle is the consistent framework by which all Igbo communities organize time. Every Igbo person knows that after seven four-day periods — 28 days — a new month begins, and with it, Izu Mbụ starts anew with the next Eke day."
             )
             .padding(.horizontal, 16)
         }

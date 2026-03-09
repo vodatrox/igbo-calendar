@@ -5,50 +5,50 @@ object IzuData {
         IzuInfo(
             name = "Izu Mbụ",
             index = 0,
-            tagline = "Ritual Cleansing & Preparation",
-            description = "The first week of the Igbo month is a time of ritual purification. Communities prepare their hearts, homes, and fields for the month ahead. It is a sacred period of setting intentions and seeking spiritual alignment.",
-            icon = "🕊️"
+            tagline = "Month Opens · First Four Days",
+            description = "Izu Mbụ opens the new Igbo month. Its four days are exactly the four market days in order — Eke, Orie, Afọ, and Nkwọ — and this same sequence repeats through all seven weeks. Communities use this first week to wrap up any remaining tasks from the previous month: finishing earth-clearing, resting before intensive work, or settling unfinished obligations. No special festival is uniquely tied to Izu Mbụ; life follows the normal market and farming routine. Farmers may begin planting or weeding on one of the four days, and every village holds its regular market on its appointed day.",
+            icon = "🌅"
         ),
         IzuInfo(
             name = "Izu Abụọ",
             index = 1,
-            tagline = "Farm Clearing & Planting",
-            description = "The second week is devoted to agricultural activity. Farmlands are cleared, seeds are planted, and the community cooperates to tend the earth. The spirit of collective labor defines this Izu.",
+            tagline = "Work Underway · Planting & Field Work",
+            description = "By Izu Abụọ — the second rotation of Eke, Orie, Afọ, and Nkwọ — the new month's activities are fully underway. In many communities, farmers do the bulk of planting or field preparation during this week, scheduling heavy labor around the four market days. Markets are active and trade brisk as the month gains momentum. No unique deity or holiday is specific to Izu Abụọ; it is business as usual, marked by the steady cycling of market days and the energy of a month now in full stride.",
             icon = "🌱"
         ),
         IzuInfo(
             name = "Izu Atọ",
             index = 2,
-            tagline = "Community Gatherings",
-            description = "Izu Atọ is the social heartbeat of the month. Families reunite, disputes are settled, and important community decisions are made. It is also a time for cultural performances and storytelling.",
-            icon = "🤝"
+            tagline = "Mid-Month Tending · Seedlings & Crops",
+            description = "Izu Atọ is the third rotation of Eke, Orie, Afọ, and Nkwọ — the heart of mid-month agricultural activity. Seedlings planted in the earlier weeks are now tended: weeded, watered, and inspected for growth. The four market days continue as usual, each hosting community trade and social exchange. Some families may schedule small rituals or priestly blessings on an Orie or Nkwọ day in Izu Atọ, though no specific festival is attached to this week.",
+            icon = "🌿"
         ),
         IzuInfo(
             name = "Izu Anọ",
             index = 3,
-            tagline = "Major Market Transactions",
-            description = "The fourth week sees the busiest trading of the month. Merchants travel from distant communities, goods flow freely, and large commercial agreements are sealed. Wealth and prosperity are the themes of Izu Anọ.",
-            icon = "🏺"
+            tagline = "Month's Midpoint · Crops Growing",
+            description = "Izu Anọ — 'Fourth Week' — is the precise midpoint of the 28-day month. Planting is mostly complete and crops are visibly growing in the fields. People continue regular farm work: weeding, tending yam mounds, and monitoring growth. Villages hold their usual Eke–Orie–Afọ–Nkwọ markets in rotation. In some traditions, the fourth week is an occasion for mid-cycle purification or prayer to the ancestors, though no pan-Igbo ceremony is unique to Izu Anọ. It is chiefly a continuation of agricultural routines at the month's center point.",
+            icon = "🌾"
         ),
         IzuInfo(
             name = "Izu Ise",
             index = 4,
-            tagline = "Rest & Spiritual Reflection",
-            description = "A quieter week dedicated to rest, prayer, and communing with the ancestors. Divination is practiced, oracles are consulted, and individuals seek spiritual guidance for their lives and futures.",
-            icon = "🔮"
+            tagline = "Harvest Approaching · Early Yields",
+            description = "Izu Ise brings the fifth cycle of Eke, Orie, Afọ, and Nkwọ. By this week, harvest is approaching in communities that reap during this month, so the focus begins to shift from tending to crop-checking and storing early produce. Market days proceed as normal, often growing livelier as early yields enter trade. Some villages begin informal harvest rituals or ancestral offerings on one of these days. Like the earlier weeks, Izu Ise is a regular work-and-market week — part of the steady annual rhythm of Igbo agricultural life.",
+            icon = "🌻"
         ),
         IzuInfo(
             name = "Izu Isii",
             index = 5,
-            tagline = "Festivals & Masquerades",
-            description = "The sixth week is the most celebratory of the month. Masquerades emerge, songs fill the air, and the community honors its cultural heritage through dance, music, and traditional pageantry.",
-            icon = "🎭"
+            tagline = "Penultimate Week · Final Fields",
+            description = "Izu Isii — the penultimate four days of the month — often involves harvesting root crops like cocoyams, or the final planting of late fields, depending on local climate and the month's position in the year. The four market days rotate through Eke, Orie, Afọ, and Nkwọ as always. No specific deity or holiday is tied to Izu Isii itself. Farmers may use the Orie or Nkwọ day of this week to offer kola nut in thanks to Ala, the earth goddess, for a good growing season — a quiet personal expression of gratitude before the month draws to a close.",
+            icon = "🏺"
         ),
         IzuInfo(
             name = "Izu Asaa",
             index = 6,
-            tagline = "Conclusion of the Cycle",
-            description = "The final week brings the month to a close. Elders convene to assess the month's events, plan for the season ahead, and in some traditions, consult the stars to determine the next year's farming calendar.",
+            tagline = "Month Concludes · 28 Days Complete",
+            description = "Izu Asaa — 'Seventh Week' — is the final four days of the Igbo month. After the last market day (Nkwọ) of Izu Asaa, the 28-day month formally concludes. In many communities this is a quieter time: fields are largely done and people prepare for the festivals or key activities of the coming month. No pan-Igbo rituals occur specifically because it is Izu Asaa; it simply completes the cycle. Some farmers rest on the final day, and then the new month (Ọnwa) and its first week (Izu Mbụ) begin anew with the next Eke day.",
             icon = "⭐"
         )
     )
