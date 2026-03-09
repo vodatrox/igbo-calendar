@@ -303,6 +303,26 @@ private fun OnwaCard(onwa: OnwaInfo, index: Int) {
                     .background(accent.copy(alpha = 0.04f))
                     .padding(horizontal = 14.dp, vertical = 12.dp)
             ) {
+                // Festival badge
+                Row(
+                    verticalAlignment = Alignment.CenterVertically,
+                    horizontalArrangement = Arrangement.spacedBy(6.dp),
+                    modifier = Modifier
+                        .clip(RoundedCornerShape(8.dp))
+                        .background(accent.copy(alpha = 0.12f))
+                        .padding(horizontal = 10.dp, vertical = 5.dp)
+                ) {
+                    Text("🎊", fontSize = 12.sp)
+                    Text(
+                        text = onwa.festival,
+                        fontSize = 11.sp,
+                        fontWeight = FontWeight.SemiBold,
+                        color = accent
+                    )
+                }
+
+                Spacer(Modifier.height(10.dp))
+
                 Text(
                     text = onwa.description,
                     fontSize = 13.sp,

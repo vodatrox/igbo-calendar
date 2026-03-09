@@ -264,6 +264,18 @@ private struct OnwaCard: View {
 
             if expanded {
                 VStack(alignment: .leading, spacing: 10) {
+                    // Festival badge
+                    HStack(spacing: 6) {
+                        Text("🎊").font(.system(size: 12))
+                        Text(onwa.festival)
+                            .font(.system(size: 11, weight: .semibold))
+                            .foregroundColor(accent)
+                    }
+                    .padding(.horizontal, 10)
+                    .padding(.vertical, 5)
+                    .background(accent.opacity(0.12))
+                    .cornerRadius(8)
+
                     Text(onwa.description)
                         .font(.system(size: 13))
                         .foregroundColor(colors.onSurface)

@@ -39,6 +39,7 @@ data class OnwaInfo(
     val name: String,
     val index: Int,
     val season: String,
+    val festival: String,
     val description: String,
     val activities: List<String>
 )

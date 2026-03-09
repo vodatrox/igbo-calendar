@@ -48,6 +48,7 @@ struct OnwaInfo: Identifiable {
     let name: String
     let index: Int
     let season: String
+    let festival: String
     let description: String
     let activities: [String]
 }
