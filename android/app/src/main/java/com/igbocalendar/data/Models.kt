@@ -19,6 +19,7 @@ data class MarketDayInfo(
     val index: Int,
     val tagline: String,
     val significance: String,
+    val element: String,
     val direction: String,
     val deity: String,
     val activities: List<String>,

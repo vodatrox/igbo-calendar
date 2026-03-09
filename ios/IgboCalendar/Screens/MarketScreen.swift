@@ -157,9 +157,10 @@ private struct MarketDayCard: View {
 
                     Spacer().frame(height: 4)
 
-                    HStack(spacing: 10) {
+                    HStack(spacing: 8) {
+                        InfoPill(text: "🌀 \(dayInfo.element)", color: dayInfo.color)
                         InfoPill(text: "📍 \(dayInfo.direction)", color: dayInfo.color)
-                        InfoPill(text: "🙏 \(dayInfo.deity.components(separatedBy: " ").first ?? "")", color: dayInfo.color)
+                        InfoPill(text: "✨ \(dayInfo.deity.components(separatedBy: " ").first ?? "")", color: dayInfo.color)
                     }
                 }
 
@@ -260,7 +261,7 @@ private struct CosmicCycleInfo: View {
                     .font(.system(size: 16, weight: .bold))
                     .foregroundColor(colors.primary)
             }
-            Text("The four Igbo market days — Eke, Orie, Afọ, and Nkwọ — are not merely commercial days. They represent the four cardinal directions, four divine forces, and the fundamental rhythm of Igbo cosmological time. Every community has its primary market day, which defines its identity and spiritual orientation within the greater Igbo world.")
+            Text("The four Igbo market days embody the four classical elements of existence — Eke (Fire), Orie (Water), Afọ (Earth), and Nkwọ (Air). They align with the four cardinal directions and four divine forces, weaving a complete cosmological framework. The Izu, this sacred four-day cycle, reflects the Igbo belief that the number four symbolizes completeness, mirroring the universe's own quadripartite nature. Every community is spiritually oriented by its primary market day, defining its identity within the greater Igbo world.")
                 .font(.system(size: 13))
                 .foregroundColor(colors.onSurfaceMuted)
                 .lineSpacing(6)

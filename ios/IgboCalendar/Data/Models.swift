@@ -22,6 +22,7 @@ struct MarketDayInfo: Identifiable {
     let index: Int
     let tagline: String
     let significance: String
+    let element: String
     let direction: String
     let deity: String
     let activities: [String]

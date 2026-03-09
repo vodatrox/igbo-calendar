@@ -171,26 +171,26 @@ const ONWA_DATA = [
 ];
 
 const MARKET_DAYS = [
-  { name:"EKE",  icon:"🌅", tagline:"Day of Creation & Earth",
+  { name:"EKE",  icon:"🔥", tagline:"Fire of Creation & East",
     color:"var(--eke)", bg:"var(--eke-bg)",
-    direction:"East", deity:"Eke (Earth Deity)",
-    significance:"Eke is the most sacred of all market days — the day of creation and new beginnings. It is associated with the earth deity Eke, who governs life, fertility, and the land itself. Communities treat this day with deep reverence.",
-    activities:["Major market transactions","Ritual cleansing ceremonies","New business ventures","Planting & harvest ceremonies","Birth and naming rituals"] },
-  { name:"ORIE", icon:"🌤️", tagline:"Day of Sky & Community",
+    element:"Fire", direction:"East", deity:"Eke (Spirit of Fire)",
+    significance:"Eke is the primal force of fire and creation — the most sacred of all market days. Governing the East where the sun rises, Eke channels the energy of initiation, vitality, and transformation. Its fierce fire energy drives new beginnings and sparks all of existence. Certain spiritual rituals thrive on Eke, though its intense energy makes it inauspicious for travel or settling disputes.",
+    activities:["Ritual offerings & spiritual ceremonies","New business ventures & initiations","Birth and naming ceremonies","Major market transactions","Transformative rites of passage"] },
+  { name:"ORIE", icon:"💧", tagline:"Waters of Healing & West",
     color:"var(--orie)", bg:"var(--orie-bg)",
-    direction:"West", deity:"Orie (Sky Spirit)",
-    significance:"Orie is associated with the sky and communal harmony. It is a day for gathering, resolving disputes, and strengthening the bonds of the community. The spirit of Orie encourages cooperation and justice.",
-    activities:["Community meetings","Dispute resolution & justice","Trading in livestock","Village council sessions","Communal work parties"] },
-  { name:"AFỌ",  icon:"🌿", tagline:"Day of Rest & Farming",
+    element:"Water", direction:"West", deity:"Nne Mmiri (Water Mother)",
+    significance:"Orie embodies the fluid, healing power of water, flowing from the West where the sun sets. Under the guardianship of Nne Mmiri — the great water mother — this day favors nurturing tasks, cleansing rituals, and emotional reflection. It is a time for community care, spiritual purification, and the healing of bonds. Orie's gentle waters soothe conflicts and deepen communal harmony.",
+    activities:["Cleansing & purification rituals","Nne Mmiri (water deity) offerings","Community healing & care","Communal gatherings & bonding","Introspection & emotional healing"] },
+  { name:"AFỌ",  icon:"🌿", tagline:"Earth of Abundance & North",
     color:"var(--afo)", bg:"var(--afo-bg)",
-    direction:"North", deity:"Afọ (Farm & Rest Deity)",
-    significance:"Afọ is a sacred day of rest and reflection, especially for farming communities. It honors the agricultural cycle and the spirits that govern the land's fertility. On Afọ, heavy physical labor is traditionally avoided.",
-    activities:["Rest and spiritual reflection","Farm planning & consulting elders","Ancestral remembrance","Herbal medicine preparation","Quiet family gatherings"] },
-  { name:"NKWỌ", icon:"🌙", tagline:"Day of Completion & Cycles",
+    element:"Earth", direction:"North", deity:"Ala (Earth Goddess)",
+    significance:"Afọ embodies the grounding power of the earth, anchored in the North. Presided over by Ala — the sacred earth goddess and guardian of Igbo morality — this day promotes stability, fertility, and material prosperity. Agriculture, trade, and building flourish on Afọ. It is a day to sow, consolidate, and harvest, honoring the soil that sustains and nourishes all life.",
+    activities:["Agriculture, planting & harvest","Ala (earth goddess) offerings","Trade & commercial transactions","Building & construction work","Fertility and ancestral rites"] },
+  { name:"NKWỌ", icon:"💨", tagline:"Air of Wisdom & South",
     color:"var(--nkwo)", bg:"var(--nkwo-bg)",
-    direction:"South", deity:"Nkwọ (Cycle Deity)",
-    significance:"Nkwọ marks the conclusion of the Izu cycle. It is a powerful day of endings and new beginnings — a time to settle accounts, prepare for the next cycle, and honor the continuity of Igbo tradition.",
-    activities:["Cycle conclusion ceremonies","Settling of debts & accounts","Preparation for new Izu","Major masquerade festivals","Elders' strategic gatherings"] }
+    element:"Air", direction:"South", deity:"Nkwọ (Wind Spirit)",
+    significance:"Nkwọ signifies the expansive force of air — the invisible breath that carries thought, words, and ancestral spirit. Linked to the South, it governs intellect, communication, and movement. The ideal day for long-distance trade, philosophical discourse, and spiritual seeking, Nkwọ's winds bring clarity and foresight. It marks the conclusion of the Izu cycle, preparing the community for renewal.",
+    activities:["Long-distance travel & trade","Intellectual discourse & learning","Divination & spiritual seeking","Cycle conclusion ceremonies","Masquerade festivals & ancestral celebrations"] }
 ];
 
 const DAY_CSS_VARS = { EKE:"var(--eke)", ORIE:"var(--orie)", "AFỌ":"var(--afo)", "NKWỌ":"var(--nkwo)" };
@@ -473,6 +473,7 @@ function renderMarketScreen() {
   document.getElementById('tmc-day-name').textContent = md.name;
   document.getElementById('tmc-day-name').style.color = DAY_HEX[todayIgbo.dayIndex];
   document.getElementById('tmc-tagline').textContent  = md.tagline;
+  document.getElementById('tmc-element').textContent  = `🌀 ${md.element}`;
   document.getElementById('tmc-direction').textContent = `📍 ${md.direction}`;
   document.getElementById('tmc-deity').textContent    = `✨ ${md.deity}`;
 
@@ -498,6 +499,7 @@ function renderMarketScreen() {
       <div class="mdc-body">
         <p class="mdc-significance">${mday.significance}</p>
         <div class="mdc-meta">
+          <span class="meta-badge">🌀 ${mday.element}</span>
           <span class="meta-badge">📍 ${mday.direction}</span>
           <span class="meta-badge">✨ ${mday.deity}</span>
           ${isToday ? `<span class="meta-badge" style="color:${hex};border-color:${hex}60">⊙ TODAY</span>` : ''}
